@@ -41,8 +41,6 @@ namespace T3
             var b = this.Size.Width.ToString();
             DateMinPicker.MaxDate = DateTime.Today;
             DateMaxPicker.MinDate = DateMinPicker.Value;
-            //CLASES._Cls_Empleados_SPI _Cls_Empleados_SPI = new CLASES._Cls_Empleados_SPI();
-            //_Cls_Empleados_SPI._Mtd_ActualizarTablaEmpleadosSPI(false, false, true);
         }
                 
         private void _Bt_Importar_Click_1(object sender, EventArgs e)
