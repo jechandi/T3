@@ -20,12 +20,6 @@ namespace T3
         public static DateTime Datemin;
         public static DateTime Datemax;
 
-        //
-        //public static DataSet tabla2 = new DataSet();
-        public static DataTable tabla2 = new DataTable();
-
-        //
-
         public Frm_ImportNomina()
         {
             InitializeComponent();
@@ -50,7 +44,6 @@ namespace T3
             if (_Cls_Variosmetodos.Nomina_CSV())
             {
                 var tabla = CLASES._Cls_Varios_Metodos.dataset2.Tables[0];
-                tabla2 = tabla;
                 tabla.Rows[tabla.Rows.Count - 1].Delete();
 
                 try
@@ -68,7 +61,6 @@ namespace T3
                     MCont.Text = "Mes de Contabilización: " + tabla.Rows[0][6].ToString();
                     _Dg_Grid.DataSource = tabla;
                     _Dg_Grid.ReadOnly = true;
-                    
                     button1.Enabled = true;
                 }
                 catch (Exception ex)
