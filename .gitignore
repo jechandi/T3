@@ -5,3 +5,13 @@ obj/Debug/es/T3.resources.dll
 obj/Debug/es/T3.resources.dll
 #tipos de archivos
 *.pdb
+*.dll
+bin/Debug/T3.exe
+*.pdb
+obj/Debug/es/T3.resources.dll
+*.Cache
+obj/Debug/T3.exe
+*.pdb
+obj/Debug/T3.Properties.Resources.resources
+*.dll
+T3.suo
