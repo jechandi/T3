@@ -4,4 +4,4 @@ obj/Debug/es/T3.resources.dll
 *.pdb
 obj/Debug/es/T3.resources.dll
 Multimedia/*
-Resources/*
+Resources\*
