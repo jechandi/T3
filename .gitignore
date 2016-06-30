@@ -1,17 +1,7 @@
-bin/Debug/T3.exe
-bin/Debug/T3.pdb
-bin/Debug/es/T3.resources.dll
-obj/Debug/T3.exe
-obj/Debug/T3.pdb
-obj/Debug/es/T3.resources.dll
-obj/Debug/T3.csproj.GenerateResource.Cache
-obj/Debug/es/T3.resources.dll
-obj/Debug/T3.Properties.Resources.resources
-
-T3.suo
-
+# Ignorar
+*.exe
 *.pdb
 *.dll
 *.Cache
-
-
+*.resources
+*.suo
