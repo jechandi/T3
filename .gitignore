@@ -1,7 +1,7 @@
+#archivos especificos
 bin/Debug/T3.exe
 bin/Debug/T3.exe
 obj/Debug/es/T3.resources.dll
+obj/Debug/es/T3.resources.dll
+#tipos de archivos
 *.pdb
-obj/Debug/es/T3.resources.dll
-Multimedia/*
-Resources\*
