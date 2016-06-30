@@ -1715,61 +1715,46 @@ namespace T3
             var cmes = dsn.Tables[0].Rows[0][6].ToString().Trim();
             var cidcom = _Cls_Variosmetodos._Mtd_Consecutivo_TCOMPROBANC();
 
-            string _Str_Sql = Tcomprobanc_Ins2() + " \n";
+            string _Str_Sql = Tcomprobanc_Ins2(cidcom) + " \n";
 
             foreach (DataGridViewRow _Dg_Row in _Dg_Grid.Rows)
             {
                 if (Convert.ToString(_Dg_Row.Cells["Cuenta"].Value).Trim().Length > 0)
                 {
                     _Str_Sql +=
-                        "INSERT INTO TNOMINACONTABILIDAD VALUES (GETDATE(), '" +
-                        ccomp +
-                        "', '', '" +
-                        _Dg_Row.Cells[0].Value.ToString().Trim() + "', '" +
-                        _Dg_Row.Cells[2].Value.ToString().Trim() + "', " +
-                        "CONVERT(datetime, '" + cfechacom + "',103), " +
-                        cano + ", " + cmes + ", " +
+                        "INSERT INTO TNOMINACONTABILIDAD VALUES (GETDATE(), '" + ccomp + "', '', '" +
+                        _Dg_Row.Cells[0].Value.ToString().Trim() + "', '" +_Dg_Row.Cells[2].Value.ToString().Trim() + "', " +
+                        "CONVERT(datetime, '" + cfechacom + "',103), " + cano + ", " + cmes + ", " +
                         Val_Null(Convert.ToDecimal(_Dg_Row.Cells[7].Value).ToString().Replace(',', '.')) + ", " +
                         Val_Null(Convert.ToDecimal(_Dg_Row.Cells[8].Value).ToString().Replace(',', '.')) + ", " +
                         cidcom + ", 0) \n";
 
                     _Str_Sql +=
                         "INSERT INTO TCOMPROBAND (ccompany,cidcomprob,corder,ccount,cdescrip,ctdocument,cnumdocu,ctotdebe,ctothaber,cdateadd,cuseradd) VALUES ('" +
-                        Frm_Padre._Str_Comp + "', " +
-                        cidcom + ", " +
-                        _Dg_Row.Index + 1 + ", '" +
-                        _Dg_Row.Cells[0].Value.ToString() + "', '" +
-                        _Dg_Row.Cells[2].Value.ToString() + "', '" +
-                        _Dg_Row.Cells[5].Value.ToString() + "', '" +
-                        _Dg_Row.Cells[6].Value.ToString() + "', " +
+                        ccomp + "', " + cidcom + ", " + _Dg_Row.Index + 1 + ", '" + _Dg_Row.Cells[0].Value.ToString() + "', '" +
+                        _Dg_Row.Cells[2].Value.ToString() + "', '" + _Dg_Row.Cells[5].Value.ToString() + "', '" + _Dg_Row.Cells[6].Value.ToString() + "', " + 
                         Val_Null(Convert.ToDecimal(_Dg_Row.Cells[7].Value).ToString().Replace(',', '.')) + ", " +
                         Val_Null(Convert.ToDecimal(_Dg_Row.Cells[8].Value).ToString().Replace(',', '.')) + ", " +
-                        "GETDATE(), '" +
-                        Frm_Padre._Str_Use + "') \n";
+                        "GETDATE(), '" + Frm_Padre._Str_Use + "') \n";
                 }
             }
 
-            try
-            {
+            try{
                 Program._MyClsCnn._mtd_conexion._Mtd_EjecutarSentencia(_Str_Sql);
                 MessageBox.Show("La operación ha sido realizadad correctamente. Comprobante: " + _Mtd_RetornarID_Correl(cidcom.ToString()), "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
-            }
-            catch (Exception Ex)
-            {
-                MessageBox.Show("Error al procesar");
-            }
+                this.Close();}
+            catch (Exception Ex){MessageBox.Show("Error al procesar");}
         }
 
-        public string Tcomprobanc_Ins2()
+        public string Tcomprobanc_Ins2(int cidcom)
         {
             DataSet _Ds = Program._MyClsCnn._mtd_conexion._Mtd_RetornarDataset("SELECT ('N'+cnombre1 + ' A' + capellido1 + 'C' + CAST(ccedula as varchar)) as result FROM TEMPLEADOS_SPI WHERE cid_templeado_spi = 1");
             var a = _Ds.Tables[0].Rows[0][0].ToString();
 
             string _Str_Sql = "INSERT INTO TCOMPROBANC VALUES ('" +
-                                Frm_Padre._Str_Comp + "', " +
-                                _Cls_Variosmetodos._Mtd_Consecutivo_TCOMPROBANC() + ", " +
-                                "'06', '" +
+                                dsn.Tables[0].Rows[0][0].ToString().Trim() + "', " +
+                                cidcom + ", " +
+                                "'01', '" +
                                 _Txt_Descripcion.Text.Trim() + "', " +
                                 dsn.Tables[0].Rows[0][5].ToString().Trim() + ", " +
                                 dsn.Tables[0].Rows[0][6].ToString().Trim() + ", " +

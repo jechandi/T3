@@ -7538,72 +7538,8 @@ namespace T3.CLASES
             return _Dcm_Monto;
         }
 
-
-
-
-
-
-
         //nuevo agregar nomina
-        public static DataSet dataset = new DataSet();
         public static DataSet dataset2 = new DataSet();
-
-        //public static List<Nomina_T_Csv> Nomina_R = new List<Nomina_T_Csv>();
-        //public class Nomina_T_Csv
-        //{
-        //    public string COMPANIA { set; get; }
-        //    public string FICHATRABAJADOR { set; get; }
-        //    public string CUENTACONTABLE { set; get; }
-        //    public string DESCRIPCIONPROCESO { set; get; }
-        //    public string FECHACONTABILIZACION { set; get; }
-        //    public int ANOCONTABILIZACION { set; get; }
-        //    public int MESCONTABLE { set; get; }
-        //    public string MONTODEBE { set; get; }
-        //    public string MONTOHABER { set; get; }
-        //}
-             
-        //public void Nomina_List(string fileName)
-        //{
-        //    Nomina_R.Clear();
-        //    StreamReader sr = new StreamReader(fileName);
-        //    string delimiter = ",";
-        //    dataset.Tables.Add();
-        //    string allData = sr.ReadToEnd();
-        //    string[] rows = allData.Split("\r".ToCharArray());
-        //    rows.Take(1).Single().Split(delimiter.ToCharArray()).ToList().ForEach(x => dataset.Tables[0].Columns.Add());
-        //    rows.ToList().ForEach(r =>
-        //    {
-        //        var a = r.Split(delimiter.ToCharArray()).Select(x => x.Replace('"', ' ').Trim()).ToList();
-        //        if (a.Count() > 1)
-        //        {
-        //            Nomina_R.Add(new Nomina_T_Csv
-        //            {
-        //                COMPANIA = a[0],
-        //                FICHATRABAJADOR = a[1],
-        //                CUENTACONTABLE = a[2],
-        //                DESCRIPCIONPROCESO = a[3],
-        //                FECHACONTABILIZACION = a[4],
-        //                ANOCONTABILIZACION = Convert.ToInt32(a[5]),
-        //                MESCONTABLE = Convert.ToInt32(a[6]),
-        //                MONTODEBE = a[7],
-        //                MONTOHABER = a[8]
-        //            });
-        //        }
-        //    });
-
-        //    string _Str_Cadena = "";
-        //    Nomina_R.ForEach(x => _Str_Cadena += "INSERT INTO TNOMINACONTABILIDAD VALUES (GETDATE(), '" +
-        //          x.COMPANIA + "', '" +
-        //          x.FICHATRABAJADOR + "', '" +
-        //          x.CUENTACONTABLE + "', '" +
-        //          x.DESCRIPCIONPROCESO + "', CONVERT(datetime, '" +
-        //          x.FECHACONTABILIZACION + "',103), " +
-        //          x.ANOCONTABILIZACION + ", " +
-        //          x.MESCONTABLE + ", " +
-        //          x.MONTODEBE + ", " +
-        //          x.MONTOHABER + ",0) ");
-        //        //Program._MyClsCnn._mtd_conexion._Mtd_EjecutarSentencia(_Str_Cadena);
-        //}
 
         public bool Nomina_CSV()
         {

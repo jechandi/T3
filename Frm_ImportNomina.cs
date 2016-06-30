@@ -12,7 +12,7 @@ using T3.CLASES;
 namespace T3
 {
     public partial class Frm_ImportNomina : Form
-    {
+    {   
         CLASES._Cls_Varios_Metodos _Cls_Variosmetodos = new CLASES._Cls_Varios_Metodos(true);
         clslibraryconssa._Cls_Formato _Cls_Formato = new clslibraryconssa._Cls_Formato("es-VE");
         public static decimal debe;
@@ -40,7 +40,7 @@ namespace T3
             CLASES._Cls_Varios_Metodos.dataset2.Clear();
             CLASES._Cls_Varios_Metodos.dataset2.Tables.Clear();
             debe = 0;haber = 0;FCont.Text = "Fecha de Contabilización: ";ACont.Text = "Año de Contabilización: ";MCont.Text = "Mes de Contabilización: ";
-
+            
             if (_Cls_Variosmetodos.Nomina_CSV())
             {
                 var tabla = CLASES._Cls_Varios_Metodos.dataset2.Tables[0];
