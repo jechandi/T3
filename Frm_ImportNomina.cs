@@ -37,6 +37,8 @@ namespace T3
 
         private void Frm_ImportNomina_Load(object sender, EventArgs e)
         {
+            var a = this.Size.Height.ToString();
+            var b = this.Size.Width.ToString();
             DateMinPicker.MaxDate = DateTime.Today;
             DateMaxPicker.MinDate = DateMinPicker.Value;
             //CLASES._Cls_Empleados_SPI _Cls_Empleados_SPI = new CLASES._Cls_Empleados_SPI();
