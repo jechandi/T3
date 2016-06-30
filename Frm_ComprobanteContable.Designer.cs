@@ -36,6 +36,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this._Pnl_Cabecera = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this._Txt_MesAno = new System.Windows.Forms.TextBox();
             this._Bt_FechaCont = new System.Windows.Forms.Button();
@@ -88,7 +89,6 @@
             this._Tlt_Tips = new System.Windows.Forms.ToolTip(this.components);
             this._Opfd_File = new System.Windows.Forms.OpenFileDialog();
             this._Lbl_DgInformacion = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this._Pnl_Cabecera.SuspendLayout();
             this._Pnl_Pie.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -120,6 +120,21 @@
             this._Pnl_Cabecera.Name = "_Pnl_Cabecera";
             this._Pnl_Cabecera.Size = new System.Drawing.Size(1101, 96);
             this._Pnl_Cabecera.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.Font = new System.Drawing.Font("Verdana", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Image = global::T3.Properties.Resources.check;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(678, 50);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(73, 23);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Guardar";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label10
             // 
@@ -686,21 +701,6 @@
             this._Lbl_DgInformacion.Text = "Puede crear un documento no existente haciendo click derecho sobre los registros " +
     "marcados";
             this._Lbl_DgInformacion.Visible = false;
-            // 
-            // button1
-            // 
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Font = new System.Drawing.Font("Verdana", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = global::T3.Properties.Resources.check;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(678, 50);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(73, 23);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Guardar";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Frm_ComprobanteContable
             // 

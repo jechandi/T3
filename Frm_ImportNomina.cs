@@ -55,7 +55,6 @@ namespace T3
                 tabla2 = tabla;
                 tabla.Rows[tabla.Rows.Count - 1].Delete();
 
-                //GoodCsv();
                 try
                 {
                     foreach (DataRow _Row in tabla.Rows)
@@ -71,21 +70,15 @@ namespace T3
                     MCont.Text = "Mes de Contabilización: " + tabla.Rows[0][6].ToString();
                     _Dg_Grid.DataSource = tabla;
                     _Dg_Grid.ReadOnly = true;
-                    EmpleadosSpi();
+                    
                     button1.Enabled = true;
                 }
                 catch (Exception ex)
                 {
                     button1.Enabled = false;
-                    MessageBox.Show("Verifique el archivo csv");
+                    MessageBox.Show("Error en el archivo CSV, verifique e intente nuevamente");
                 }
-            }
-            else
-            {
-                button1.Enabled = false;
-            }
-
-
+            }else{button1.Enabled = false;}
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -96,9 +89,10 @@ namespace T3
                     Datemax = DateMaxPicker.Value;
                     Frm_ComprobanteContable frm2 = new Frm_ComprobanteContable();
                     frm2.StartPosition = FormStartPosition.Manual;
-                    frm2.Location = new Point(this.Location.X, this.Location.Y);
+                    frm2.Location = new Point(1, Screen.PrimaryScreen.Bounds.Height - this.Size.Height - 50);
                     frm2.Width = this.Size.Width;
                     frm2.Height = this.Size.Height;
+                    EmpleadosSpi();
                     frm2.ShowDialog();
                 }else {MessageBox.Show("Revise Las Fechad de Inicio y Culminacion");}
             //}else{MessageBox.Show("Verifique montos DEBE y HABER");}
@@ -120,67 +114,9 @@ namespace T3
             string[] ListaUsuarios = new string[] { "36", "1", "18", "19", "27", "34", "30" };
             if (!ListaUsuarios.Contains(Frm_Padre._Str_UserGroup))
             {
-                //CLASES._Cls_Empleados_SPI _Cls_Empleados_SPI = new CLASES._Cls_Empleados_SPI();
-                //_Cls_Empleados_SPI._Mtd_ActualizarTablaEmpleadosSPI(false, false, true);
+                CLASES._Cls_Empleados_SPI _Cls_Empleados_SPI = new CLASES._Cls_Empleados_SPI();
+                _Cls_Empleados_SPI._Mtd_ActualizarTablaEmpleadosSPI(false, false, true);
             }
-        }
-
-        public bool GoodCsv()
-        {
-            var col0 = ("COMPANIA");//0
-            var col1 = ("FICHATRABAJADOR");//1
-            var col2 = ("CUENTACONTABLE");//2
-            var col3 = ("DESCRIPCIONPROCESO");//3
-            var col4 = ("FECHACONTABILIZACION");//4
-            var col5 = ("ANOCONTABILIZACION");//5
-            var col6 = ("MESCONTABLE");//6
-            var col7 = ("MONTODEBE");//7
-            var col8 = ("MONTOHABER");//8
-
-
-            //tabla2.Rows[0][2].ToString()
-            if (tabla2.Rows[0][0].ToString().Contains('S'))
-            {
-                //MessageBox.Show("true 0");
-            }
-
-            if (tabla2.Rows[0][2].ToString().Length > 1)
-            {
-                //MessageBox.Show("true 2");
-            }
-
-            if (tabla2.Rows[0][3].ToString().Length > 1)
-            {
-                //MessageBox.Show("true 3");
-            }
-
-            if (tabla2.Rows[0][4].ToString().Length > 1)
-            {
-                //MessageBox.Show("true 4");
-            }
-
-            var a = tabla2.Rows[0][5];
-            if (a is int)
-            {
-                MessageBox.Show("true 4");
-            }
-
-            
-
-		 
-	
-
-
-
-
-            //foreach (DataRow _Row in tabla2.Rows)
-            //{
-            //    debe += Convert.ToDecimal(_Row[7].ToString().Replace('.', ','));
-            //    haber += Convert.ToDecimal(_Row[8].ToString().Replace('.', ','));
-            //}
-
-
-            return false;
         }
     }
 }
