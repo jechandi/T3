@@ -691,7 +691,7 @@ namespace T3
 
                     _Dg_Grid.AllowUserToAddRows = true; decimal debe = 0;decimal haber = 0;
                     _Cls_Variosmetodos._Mtd_CargarCombo(_Cmb_Tipo, "Select ctypcompro,cname from TTCOMPROBAN WHERE ctypcompro = '01'");
-                    _Cmb_Tipo.SelectedIndex = 1; _Txt_Descripcion.Text = "REGISTRO DE NOMINA OBREROS SEM DEL " + Frm_ImportNomina.Datemin.ToShortDateString() + " - " + Frm_ImportNomina.Datemax.ToShortDateString();
+                    _Cmb_Tipo.SelectedIndex = 1; _Txt_Descripcion.Text = "REGISTRO DE NOMINA SEM DEL " + Frm_ImportNomina.Datemin.ToShortDateString() + " - " + Frm_ImportNomina.Datemax.ToShortDateString();
                     _Txt_Descripcion.Enabled = true;
                 
                 foreach (DataRow _Row in dsn.Tables[0].Rows)

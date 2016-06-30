@@ -7605,7 +7605,7 @@ namespace T3.CLASES
         //        //Program._MyClsCnn._mtd_conexion._Mtd_EjecutarSentencia(_Str_Cadena);
         //}
 
-        public void Nomina_CSV()
+        public bool Nomina_CSV()
         {
             OpenFileDialog fDialog = new OpenFileDialog();
             fDialog.Title = "Seleccione el archivo generado por infocent";
@@ -7616,7 +7616,8 @@ namespace T3.CLASES
                 string fileName = System.IO.Path.GetFileName(fDialog.FileName);
                 string path = Path.GetDirectoryName(fDialog.FileName);
                 grid(path + "\\" + fileName);
-            }
+                return true;
+            }else{return false;}
         }
         
         public void grid(string fileName)
@@ -7640,9 +7641,7 @@ namespace T3.CLASES
             string allData = sr.ReadToEnd();
             string[] rows = allData.Split("\r".ToCharArray());
             
-            ////var rows2 = rows.ToList().ForEach(x=>x.Split(delimiter.ToCharArray());
             rows.ToList().ForEach(r => dataset2.Tables[0].Rows.Add(r.Split(delimiter.ToCharArray()).Select(x => x.Replace('"', ' ').Trim()).ToArray()));
-            //var a = dataset2.Tables[0].Rows[0][0];
         }
 
         public string cficha(string cficha)
