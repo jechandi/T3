@@ -1701,7 +1701,7 @@ namespace T3
             if (_Txt_Debe.Text == _Txt_Haber.Text){
                 Tcomproban();}
             else{
-                DialogResult dialogResult = MessageBox.Show("Sure", "Cuenta no Balanceada", MessageBoxButtons.YesNo);
+                DialogResult dialogResult = MessageBox.Show("Cuenta no balanceada, \nDesea continuar", "Advertencia", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes){
                     Tcomproban();}
             }
@@ -1752,21 +1752,14 @@ namespace T3
             var a = _Ds.Tables[0].Rows[0][0].ToString();
 
             string _Str_Sql = "INSERT INTO TCOMPROBANC VALUES ('" +
-                                dsn.Tables[0].Rows[0][0].ToString().Trim() + "', " +
-                                cidcom + ", " +
-                                "'01', '" +
-                                _Txt_Descripcion.Text.Trim() + "', " +
-                                dsn.Tables[0].Rows[0][5].ToString().Trim() + ", " +
-                                dsn.Tables[0].Rows[0][6].ToString().Trim() + ", " +
-                                "GETDATE(), " +
+                                dsn.Tables[0].Rows[0][0].ToString().Trim() + "', " + cidcom + ", " + "'01', '" +
+                                _Txt_Descripcion.Text.Trim() + "', " + dsn.Tables[0].Rows[0][5].ToString().Trim() + ", " +
+                                dsn.Tables[0].Rows[0][6].ToString().Trim() + ", " + "GETDATE(), " +
                                 Convert.ToDecimal(_Txt_Debe.Text).ToString().Replace(',', '.') + ", " +
                                 Convert.ToDecimal(_Txt_Haber.Text).ToString().Replace(',', '.') + ", " +
                                 Convert.ToDecimal(_Txt_Saldo.Text).ToString().Replace(',', '.') + ", " +
-                                "0, 0, 0, '0', '0', '0', '0', 0, 0, GETDATE(), '" +
-                                Frm_Padre._Str_Use + "', " +
-                                "GETDATE(), GETDATE(), '" +
-                                Frm_Padre._Str_Use +
-                                "', '0', 0,NULL, 0, 0, 0, '0')";
+                                "0, 0, 0, '0', '0', '0', '0', 0, 0, GETDATE(), '" +Frm_Padre._Str_Use + "', " +
+                                "GETDATE(), GETDATE(), '" + Frm_Padre._Str_Use + "', '0', 0,NULL, 0, 0, 0, '0')";
             return _Str_Sql;
         }
 

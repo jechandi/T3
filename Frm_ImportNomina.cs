@@ -46,29 +46,36 @@ namespace T3
                 var tabla = CLASES._Cls_Varios_Metodos.dataset2.Tables[0];
                 tabla.Rows[tabla.Rows.Count - 1].Delete();
 
-                try
+                //verifico compañia
+                if (tabla.Rows[0][0].ToString().Trim() == Frm_Padre._Str_Comp.Trim())
+                //verifico compañia
                 {
-                    foreach (DataRow _Row in tabla.Rows)
+                    try
                     {
-                        debe += Convert.ToDecimal(_Row[7].ToString().Replace('.', ','));
-                        haber += Convert.ToDecimal(_Row[8].ToString().Replace('.', ','));
+                        foreach (DataRow _Row in tabla.Rows)
+                        {
+                            debe += Convert.ToDecimal(_Row[7].ToString().Replace('.', ','));
+                            haber += Convert.ToDecimal(_Row[8].ToString().Replace('.', ','));
+                        }
+                        L_Debe.Text = debe.ToString("#,##0.00");
+                        L_Haber.Text = haber.ToString("#,##0.00");
+                        L_Saldo.Text = (debe - haber).ToString("#,##0.00");
+                        FCont.Text = "Fecha de Contabilización: " + tabla.Rows[0][4].ToString();
+                        ACont.Text = "Año de Contabilización: " + tabla.Rows[0][5].ToString();
+                        MCont.Text = "Mes de Contabilización: " + tabla.Rows[0][6].ToString();
+                        _Dg_Grid.DataSource = tabla;
+                        _Dg_Grid.ReadOnly = true;
+                        _Bt_Gen_Comprobante.Enabled = true;
                     }
-                    L_Debe.Text = debe.ToString("#,##0.00");
-                    L_Haber.Text = haber.ToString("#,##0.00");
-                    L_Saldo.Text = (debe - haber).ToString("#,##0.00");
-                    FCont.Text = "Fecha de Contabilización: " + tabla.Rows[0][4].ToString();
-                    ACont.Text = "Año de Contabilización: " + tabla.Rows[0][5].ToString();
-                    MCont.Text = "Mes de Contabilización: " + tabla.Rows[0][6].ToString();
-                    _Dg_Grid.DataSource = tabla;
-                    _Dg_Grid.ReadOnly = true;
-                    button1.Enabled = true;
-                }
-                catch (Exception ex)
-                {
-                    button1.Enabled = false;
-                    MessageBox.Show("Error en el archivo CSV, verifique e intente nuevamente");
-                }
-            }else{button1.Enabled = false;}
+                    catch (Exception ex)
+                    {
+                        _Bt_Gen_Comprobante.Enabled = false;
+                        MessageBox.Show("Error en el archivo CSV, verifique e intente nuevamente");
+                    }
+                //verifico compañia
+                }else { MessageBox.Show("Error en el archivo CSV, la compañia no coincide"); }
+                //verifico compañia
+            }else{_Bt_Gen_Comprobante.Enabled = false;}
         }
 
         private void button1_Click(object sender, EventArgs e)
