@@ -73,7 +73,7 @@ namespace T3
                         MessageBox.Show("Error en el archivo CSV, verifique e intente nuevamente");
                     }
                 //verifico compañia
-                }else { MessageBox.Show("Error en el archivo CSV, la compañia no coincide"); }
+                }else { MessageBox.Show("Error en el archivo CSV, la compañia no coincide"); _Bt_Gen_Comprobante.Enabled = false; }
                 //verifico compañia
             }else{_Bt_Gen_Comprobante.Enabled = false;}
         }
