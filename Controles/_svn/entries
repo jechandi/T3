@@ -1,7 +1,7 @@
 10
 
 dir
-4248
+4251
 https://192.168.1.9:443/svn/conssa/t3win2010/branches/sprint_1/Controles
 https://192.168.1.9:443/svn/conssa
 
@@ -570,14 +570,14 @@ apetit
 
 23701
 
-_Ctrl_Activar.designer.cs
+_Ctrl_Tabs.designer.cs
 file
 
 
 
 
 2016-03-09T14:44:17.912308Z
-ea56dfec0413a6149483144789291261
+6f7420a64f9c8d5050ba2e90e97e4a36
 2012-08-01T12:37:29.569608Z
 1381
 dgavidia
@@ -602,7 +602,7 @@ dgavidia
 
 
 
-17404
+4612
 
 _Ctrl_Page.resx
 file
@@ -638,14 +638,14 @@ dgavidia
 
 11855
 
-_Ctrl_Tabs.designer.cs
+_Ctrl_Activar.designer.cs
 file
 
 
 
 
 2016-03-09T14:44:17.912308Z
-6f7420a64f9c8d5050ba2e90e97e4a36
+ea56dfec0413a6149483144789291261
 2012-08-01T12:37:29.569608Z
 1381
 dgavidia
@@ -670,41 +670,7 @@ dgavidia
 
 
 
-4612
-
-_Ctrl_Clave.designer.cs
-file
-
-
-
-
-2016-03-09T14:44:17.912308Z
-cc1debd67ef0930ec28049ad7bf20f5b
-2014-09-09T18:42:55.861940Z
-3684
-josio
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-7225
+17404
 
 _Ctrl_PropiedCodBar.resx
 file
@@ -739,6 +705,40 @@ dgavidia
 
 
 5814
+
+_Ctrl_Clave.designer.cs
+file
+
+
+
+
+2016-03-09T14:44:17.912308Z
+cc1debd67ef0930ec28049ad7bf20f5b
+2014-09-09T18:42:55.861940Z
+3684
+josio
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7225
 
 _Ctrl_Clave.cs
 file
@@ -808,40 +808,6 @@ dgavidia
 
 9880
 
-_Ctrl_Comp.designer.cs
-file
-
-
-
-
-2016-03-09T14:44:17.927907Z
-8934e7f98f532bb4db555a4a594ca41e
-2012-08-01T12:37:29.569608Z
-1381
-dgavidia
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-6205
-
 _Ctrl_Multifiltro2014.resx
 file
 
@@ -875,6 +841,40 @@ apetit
 
 
 7440
+
+_Ctrl_Comp.designer.cs
+file
+
+
+
+
+2016-03-09T14:44:17.927907Z
+8934e7f98f532bb4db555a4a594ca41e
+2012-08-01T12:37:29.569608Z
+1381
+dgavidia
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6205
 
 _Ctrl_Comp.cs
 file
@@ -978,14 +978,14 @@ dgavidia
 
 8117
 
-_Ctrl_BusquedaPage.designer.cs
+_Ctrl_Tabs.resx
 file
 
 
 
 
 2016-03-09T14:44:17.927907Z
-20808770986695bf3f848bcace817149
+faaf48b2bc6a92a52fd37d704f8e6050
 2012-08-01T12:37:29.569608Z
 1381
 dgavidia
@@ -1010,7 +1010,7 @@ dgavidia
 
 
 
-15446
+7953
 
 _Ctrl_Activar.resx
 file
@@ -1046,14 +1046,14 @@ dgavidia
 
 6012
 
-_Ctrl_Tabs.resx
+_Ctrl_BusquedaPage.designer.cs
 file
 
 
 
 
 2016-03-09T14:44:17.927907Z
-faaf48b2bc6a92a52fd37d704f8e6050
+20808770986695bf3f848bcace817149
 2012-08-01T12:37:29.569608Z
 1381
 dgavidia
@@ -1078,7 +1078,7 @@ dgavidia
 
 
 
-7953
+15446
 
 _Ctrl_BusquedaPage.cs
 file

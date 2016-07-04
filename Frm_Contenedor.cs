@@ -4819,8 +4819,8 @@ namespace T3
                     // INICIO --- actualiza la tabla de empleados spi, utilizando el 'retraso' de cada 4 horas, sólo si el usuario es local
                     if (!CLASES._Cls_Conexion._Bol_UsuarioRemoto)
                     {
-                        CLASES._Cls_Empleados_SPI _Cls_Empleados_SPI = new CLASES._Cls_Empleados_SPI();
-                        _Cls_Empleados_SPI._Mtd_ActualizarTablaEmpleadosSPI(false, false, true);
+                        //CLASES._Cls_Empleados_SPI _Cls_Empleados_SPI = new CLASES._Cls_Empleados_SPI();
+                        //_Cls_Empleados_SPI._Mtd_ActualizarTablaEmpleadosSPI(false, false, true);
                     }
                     // FIN --- actualiza la tabla de empleados spi, utilizando el 'retraso' de cada 4 horas
                     _Str_Sql = "SELECT COUNT(ccedula) FROM VST_EMPLEADOS_SPI_UNITICKET WHERE ((cingreso_reportado = 'NO') OR (cegreso_reportado = 'NO' AND cfecha_egreso <> '')) AND ccompany = '" + Frm_Padre._Str_Comp + "'";
