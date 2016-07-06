@@ -610,7 +610,16 @@ namespace T3
                     {
                         _Str_Cor = myUtilidad._Mtd_Correlativo("select max(ciddetalleislr) from TCOMPROBANISLRD where ccompany='" + Frm_Padre._Str_Comp + "' and cidcomprobislr='" + _Txt_RetId.Text + "' and cproveedor='" + Convert.ToString(_Cb_Proveedor.SelectedValue) + "'");
                         _Str_Sql = "INSERT INTO TCOMPROBANISLRD (ccompany,cidcomprobislr,cproveedor,ctdocument,cnumdocu,cfechadocu,cnumcontrolfact,cmontosi,calicuota,csustraendo,cretenido,ciddetalleret) VALUES('" +
-                        Frm_Padre._Str_Comp + "'," + _Txt_RetId.Text + ",'" + Convert.ToString(_Cb_Proveedor.SelectedValue) + "','" + _DgRow.Cells[8].Value.ToString() + "','" + _DgRow.Cells[1].Value.ToString() + "','" + _DgRow.Cells[3].Value.ToString() + "','" + _DgRow.Cells[2].Value.ToString() + "'," + _DgRow.Cells[4].Value.ToString().Replace(".", "").Replace(",", ".").Replace("-", "") + ",'" + Convert.ToString(_DgRow.Cells[5].Value) + "'," + _DgRow.Cells[6].Value.ToString().Replace(".", "").Replace(",", ".").Replace("-", "") + "," + _DgRow.Cells[7].Value.ToString().Replace(".", "").Replace(",", ".").Replace("-", "") + "," + _Str_Cor + ")";
+                        Frm_Padre._Str_Comp + "'," + 
+                        _Txt_RetId.Text + 
+                        ",'" + 
+                        Convert.ToString(_Cb_Proveedor.SelectedValue) + 
+                        "','" + 
+                        _DgRow.Cells[8].Value.ToString() + 
+                        "','" + 
+                        _DgRow.Cells[1].Value.ToString() + 
+                        "','" + 
+                        _DgRow.Cells[3].Value.ToString() + "','" + _DgRow.Cells[2].Value.ToString() + "'," + _DgRow.Cells[4].Value.ToString().Replace(".", "").Replace(",", ".").Replace("-", "") + ",'" + Convert.ToString(_DgRow.Cells[5].Value) + "'," + _DgRow.Cells[6].Value.ToString().Replace(".", "").Replace(",", ".").Replace("-", "") + "," + _DgRow.Cells[7].Value.ToString().Replace(".", "").Replace(",", ".").Replace("-", "") + "," + _Str_Cor + ")";
                         Program._MyClsCnn._mtd_conexion._Mtd_EjecutarSentencia(_Str_Sql);
                     }
                     else
